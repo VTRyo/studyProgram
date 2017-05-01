@@ -1,0 +1,9 @@
+MongoDB
+
+ドキュメント指向
+MysqlではなくNosql
+Nosql：スキーマレス
+
+知識
+JS
+
