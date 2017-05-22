@@ -1,0 +1,9 @@
+  - name: install nginx
+    apt: name={{ item }} state=present
+    with_items:
+      - nginx
+      
+  - name: start nginx
+    sudo: True
+    service: name=nginx enabled=yes state=started
+    

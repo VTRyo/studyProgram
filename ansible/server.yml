@@ -1,0 +1,8 @@
+  - hosts: server
+    become: True
+    roles:
+      - common
+      - nginx
+      - wordpress
+      - php
+      - mysql

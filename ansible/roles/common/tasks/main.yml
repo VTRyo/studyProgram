@@ -1,0 +1,10 @@
+  - name: install package
+    apt: name={{ item }} state=present
+    with_items:
+      - git 
+      - htop
+      - mlocate
+      - vim
+      - tree
+      - zsh
+    notify: mlocate
