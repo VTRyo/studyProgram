@@ -27,3 +27,10 @@ class Kame(turtle.Turtle):
         self.getscreen().bgcolor('gray')
         self.pencolor('white')
 
+    def hit_wall(self):
+        xx = self.window_width() / 2.0 #ウィンドウ幅の半分がx座標の最大値
+        yy = self.window_height() / 2.0 #ウィンドウ高の半分がy座標の最大値
+
+        line = Line(math.tan(self.heading()),self.xcor(),self.ycor())
+        rand_angle = math.pi * random.random()
+
