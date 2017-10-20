@@ -26,3 +26,4 @@ class Kame(turtle.Turtle):
         self.width(10)
         self.getscreen().bgcolor('gray')
         self.pencolor('white')
+
