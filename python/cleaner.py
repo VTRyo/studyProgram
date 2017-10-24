@@ -34,21 +34,28 @@ class Kame(turtle.Turtle):
         line = Line(math.tan(self.heading()),self.xcor(),self.ycor())
         rand_angle = math.pi * random.random()
 
-    if self.towards(-xx,yy) > self.heading() >= self.towards(xx,yy):
-        des_x = line.get_x(yy)
-        des_y = yy
-        turn_angle = self.heading() + rand_angle
-    elif self.towards(-xx, -yy) > self.heading() >= self.towards(-xx,yy):
-        des_x = -xx
-        des_y = line.get_y(-xx)
-        turn_angle = self.heading() - 0.5 * math.pi + rand_angle
-    elif self.towards(xx,-yy) > self.heading() >= self.towards(-xx,-yy):
-        des_x = line.get_x(-yy)
-        des_y = -yy
-        turn_angle = self.heading() - rand_angle
-    else:
-        des_x = xx
-        des_y = line.get_y(xx)
-        turn_angle = self.heading() - 0.5 * math.pi - rand_angle
+        if self.towards(-xx,yy) > self.heading() >= self.towards(xx,yy):
+            des_x = line.get_x(yy)
+            des_y = yy
+            turn_angle = self.heading() + rand_angle
+        elif self.towards(-xx, -yy) > self.heading() >= self.towards(-xx,yy):
+            des_x = -xx
+            des_y = line.get_y(-xx)
+            turn_angle = self.heading() - 0.5 * math.pi + rand_angle
+        elif self.towards(xx,-yy) > self.heading() >= self.towards(-xx,-yy):
+            des_x = line.get_x(-yy)
+            des_y = -yy
+            turn_angle = self.heading() - rand_angle
+        else:
+            des_x = xx
+            des_y = line.get_y(xx)
+            turn_angle = self.heading() - 0.5 * math.pi - rand_angle
+
+        self.goto(des_x,des_y) #壁に当たるまで移動
+        self.right(turn_angle) #回転して内側に顔を出す
+
+    def run(self):
+        while True:
+            self.hit_wall()
 
 
