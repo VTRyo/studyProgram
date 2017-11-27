@@ -1,0 +1,14 @@
+version: '2'
+
+wordpress:
+  image: wordpress
+  ports:
+    - "80:80"
+  links:
+    - mysql
+
+#mysqlではenvironmentの指定が必須。公式イメージ
+mysql:
+  images: mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: password
