@@ -7,7 +7,7 @@ import (
 
 func main() {
     log.Print("これはコマンドを実行するプログラムです.\n")
-    out, error := exec.Command("date").Output()
+    out, error := exec.Command("cat", "call-command.go").Output()
 
     if error != nil {
       log.Printf("エラー: %s", error)
