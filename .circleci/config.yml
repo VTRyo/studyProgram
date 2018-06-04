@@ -10,8 +10,6 @@ jobs:
       - run:
           name: exec initialize
           command: |
-            sudo apt-get install -y mongodb-org
-            sudo service mongod restart
             sudo apt-cache showpkg mecab
             sudo apt-cache showpkg libmecab-dev
             sudo apt-get install mecab=0.996-1.1 -y
