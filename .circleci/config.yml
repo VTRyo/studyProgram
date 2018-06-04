@@ -1,13 +1,8 @@
 version: 2
-
 jobs:
   build:
     docker:
-      - image circleci/ruby:2.3-node-browsers
-    working_directory: ~/studyProgram
+      - image: circleci/ruby:2.3-node-browsers
     steps:
       - checkout
-      - run:
-          name: test message
-          command: echo "hello 2.0"
-
+      - run: echo hello
