@@ -1,10 +1,30 @@
 version: 2
+
 jobs:
   build:
     docker:
       - image: circleci/ruby:2.3-node-browsers
+    working_directory: ~/studyProgram
     steps:
       - checkout
-      - run: 
-          name: echo hello
-          command: echo "hello"
+      - run:
+          name: exec initialize
+          command: |
+            sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+            echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4.10 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+            sudo apt-get install -y mongodb-org
+            sudo service mongod restart
+            sudo apt-cache showpkg mecab
+            sudo apt-cache showpkg libmecab-dev
+            sudo apt-get install mecab=0.996-1.1 -y
+            sudo apt-get install mecab-ipadic-utf8 -y
+            sudo apt-get install libmecab-dev=0.996-1.1 -y
+            sudo pip install awscli
+            sudo cp config/circleci/my.cnf /etc/mysql/my.cnf
+            sudo service mysql restart
+            sudo chmod 777 /var/run/mysqld/mysqld.sock
+            gem update --system 2.7.6
+            gem uninstall -x bundler
+            gem install bundler -v 1.16.1
+            sudo service redis-server start
+
