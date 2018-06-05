@@ -15,5 +15,5 @@ jobs:
       - checkout
       - run:
           name: install awscli
-          command: sudo pip install awscli
+          command: pip install awscli
 
