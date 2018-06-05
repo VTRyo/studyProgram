@@ -10,7 +10,7 @@ defualts: &defaults
 version: 2
 jobs:
   build:
-    << *defaults
+    <<: *defaults
     steps:
       - checkout
       - run:
