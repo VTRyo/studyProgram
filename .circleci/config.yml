@@ -6,7 +6,6 @@ defualts: &defaults
     - image: circleci/mongo:3.4.10
   docker:
     - image: circleci/mysql:5.6
-  environment: cp config/circleci/my.cnf /etc/mysql/my.cnf
 
 version: 2
 jobs:
