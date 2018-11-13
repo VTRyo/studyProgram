@@ -1,0 +1,17 @@
+<DOCTYPE html>
+<html lang='ja'>
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js App</title>
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <p>{{ count }}回クリックした</p>
+    <button v-on:click="increment">カウントを増やす</button>
+    <p>{{ message }}</p>
+    <input v-model='message'>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
