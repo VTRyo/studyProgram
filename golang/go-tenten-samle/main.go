@@ -2,6 +2,7 @@ package main
 
 import (
 	"go-sample/arrayMap"
+	"go-sample/method"
 	"go-sample/omikuji"
 	"go-sample/ponter"
 	"go-sample/typeAlias"
@@ -14,4 +15,6 @@ func main() {
 	typeAlias.TypeAlias()
 	typeFunc.TypeFunc()
 	ponter.PointSend()
+	method.Greeting()
+	method.CalsCircle()
 }

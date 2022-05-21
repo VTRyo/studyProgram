@@ -8,4 +8,5 @@ go-sample/omikuji => ./omikuji
 go-sample/typeAlias => ./typeAlias
 go-sample/typeFunc => ./typeFunc
 go-sample/pointer => ./pointer
+go-sample/method => ./method
 )
