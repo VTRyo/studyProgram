@@ -16,5 +16,7 @@ func main() {
 	typeFunc.TypeFunc()
 	ponter.PointSend()
 	method.Greeting()
-	method.CalsCircle()
+	// method.CalsCircle()
+	// method.Reshape()
+	method.Int()
 }
