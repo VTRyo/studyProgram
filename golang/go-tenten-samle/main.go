@@ -7,9 +7,11 @@ import (
 	"go-sample/interface_pra"
 	"go-sample/method"
 	"go-sample/omikuji"
+	"go-sample/panic_pra"
 	"go-sample/ponter"
 	"go-sample/typeAlias"
 	"go-sample/typeFunc"
+	"log"
 	"os"
 )
 
@@ -34,5 +36,8 @@ func main() {
 	} else {
 		fmt.Println(s.String())
 	}
-
+	panic_pra.ValidID()
+	if err := panic_pra.NamePanic(); err != nil {
+		log.Fatal(err)
+	}
 }
