@@ -3,16 +3,13 @@ package main
 import (
 	"fmt"
 	"go-sample/arrayMap"
-	"go-sample/error_pra"
+	"go-sample/goroutine"
 	"go-sample/interface_pra"
 	"go-sample/method"
 	"go-sample/omikuji"
-	"go-sample/panic_pra"
 	"go-sample/ponter"
 	"go-sample/typeAlias"
 	"go-sample/typeFunc"
-	"log"
-	"os"
 )
 
 func main() {
@@ -30,14 +27,16 @@ func main() {
 	n := interface_pra.I(100)
 	interface_pra.F(n)
 	interface_pra.F(interface_pra.B(true))
-	v := error_pra.S("")
-	if s, err := error_pra.ToStringer(v); err != nil {
-		fmt.Fprintln(os.Stderr, "ERROR:", err)
-	} else {
-		fmt.Println(s.String())
-	}
-	panic_pra.ValidID()
-	if err := panic_pra.NamePanic(); err != nil {
-		log.Fatal(err)
-	}
+	// v := error_pra.S("")
+	// if s, err := error_pra.ToStringer(v); err != nil {
+	// 	fmt.Fprintln(os.Stderr, "ERROR:", err)
+	// } else {
+	// 	fmt.Println(s.String())
+	// }
+	// panic_pra.ValidID()
+	// if err := panic_pra.NamePanic(); err != nil {
+	// 	log.Fatal(err)
+	// }
+
+	goroutine.Goroutine()
 }
