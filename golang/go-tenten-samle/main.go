@@ -38,5 +38,6 @@ func main() {
 	// 	log.Fatal(err)
 	// }
 
-	goroutine.Goroutine()
+	// goroutine.Goroutine()
+	goroutine.ArgChan()
 }
